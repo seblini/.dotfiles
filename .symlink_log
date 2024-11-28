@@ -1,0 +1,11 @@
+~/.symlink_log -> ~/.dotfiles/.symlink_log
+~/.local/bin/link-dot -> ~/.dotfiles/bin/.local/scripts/link-dot
+~/.local/bin/tmux-sessionizer -> ~/.dotfiles/bin/.local/scripts/tmux-sessionizer
+~/.zshrc -> ~/.dotfiles/zsh/.zshrc
+~/.zsh_profile -> ~/.dotfiles/zsh/.zsh_profile
+~/.tmux.conf -> ~/.dotfiles/tmux/.tmux.conf
+~/.p10k.zsh -> ~/.dotfiles/p10k/.p10k.zsh
+~/.aerospace.toml -> ~/.dotfiles/aerospace/aerospace.toml
+~/.config/wezterm -> ~/.dotfiles/wezterm
+~/.config/sketchybar -> ~/.dotfiles/sketchybar
+~/.config/nvim -> ~/.dotfiles/nvim
