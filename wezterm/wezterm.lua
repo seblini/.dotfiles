@@ -14,7 +14,7 @@ config.window_decorations = "RESIZE"
 
 config.colors = {
 	foreground = "#ffffff",
-	background = "#000000",
+	background = "#0A0402",
 }
 
 return config
