@@ -17,4 +17,7 @@ config.colors = {
 	background = "#0A0402",
 }
 
+config.initial_rows = 40
+config.initial_cols = 100
+
 return config
