@@ -9,3 +9,4 @@
 ~/.config/sketchybar -> ~/.dotfiles/sketchybar
 ~/.config/nvim -> ~/.dotfiles/nvim
 ~/.aerospace.toml -> ~/.dotfiles/aerospace/.aerospace.toml
+~/.config/i3/config -> ~/.dotfiles/i3/config
