@@ -2,6 +2,12 @@ return {
 	{
 		"tpope/vim-fugitive",
 		event = "BufWinEnter",
+		config = function()
+			vim.keymap.set("n", "<leader>gs", function()
+				vim.cmd.Git("status")
+			end, { desc = "[G]it [S]tatus" })
+			vim.keymap.set("n", "<leader>ga", ":G add ", { desc = "[G]it [A]dd" })
+		end,
 	},
 	-- NOTE: Plugins can also be added by using a table,
 	-- with the first argument being the link and the following
