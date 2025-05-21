@@ -1,6 +1,7 @@
 return {
 	-- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+	--
+	-- "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
 	-- NOTE: Plugins can also be configured to run Lua code when they are loaded.
 	--
@@ -67,6 +68,7 @@ return {
 				{ "<leader>w", group = "[W]orkspace" },
 				{ "<leader>t", group = "[T]oggle" },
 				{ "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
+				{ "<leader>g", group = "[G]it" },
 			},
 		},
 	},
@@ -112,7 +114,7 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				-- Conform can also run multiple formatters sequentially
-				-- python = { "isort", "black" },
+				python = { "isort", "black" },
 				--
 				-- You can use 'stop_after_first' to run the first available formatter from the list
 				-- javascript = { "prettierd", "prettier", stop_after_first = true },
