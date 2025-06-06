@@ -3,7 +3,4 @@ return {
 	config = function()
 		require("Comment").setup()
 	end,
-	opts = {
-		-- add any options here
-	},
 }
