@@ -20,6 +20,7 @@ return {
 				"go",
 				"python",
 				"rust",
+				"gitcommit",
 			},
 			auto_install = true,
 			highlight = {

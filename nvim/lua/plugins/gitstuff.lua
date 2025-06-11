@@ -2,12 +2,14 @@ return {
 	{
 		"tpope/vim-fugitive",
 		event = "BufWinEnter",
-		config = function()
-			vim.keymap.set("n", "<leader>gs", function()
-				vim.cmd.Git("status")
-			end, { desc = "[G]it [S]tatus" })
-			vim.keymap.set("n", "<leader>ga", ":G add ", { desc = "[G]it [A]dd" })
-		end,
+	},
+	{
+		"rbong/vim-flog",
+		lazy = true,
+		cmd = { "Flog", "Flogsplit", "Floggit" },
+		dependencies = {
+			"tpope/vim-fugitive",
+		},
 	},
 	{
 		"lewis6991/gitsigns.nvim",
