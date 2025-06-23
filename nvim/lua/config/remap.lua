@@ -29,3 +29,5 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "<leader>o", "<cmd>source ~/.config/nvim/lua/snippets/go.lua<CR>")
+
+-- vim.keymap.set("n", "<leader>zf", "f{v%o^zf")
