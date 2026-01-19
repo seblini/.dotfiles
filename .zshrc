@@ -40,3 +40,5 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias dfsync='dotfiles add -u && dotfiles commit -m "backup: $(date "+%Y-%m-%d %H:%M:%S")" && dotfiles push'
