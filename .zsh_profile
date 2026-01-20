@@ -1,0 +1,47 @@
+# -- functions
+
+addToPathFront() {
+    if [[ ":$PATH:" != *":$1:"* ]]; then
+        export PATH="$1:$PATH"
+    fi
+}
+
+# -- aliases
+
+# misc
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+# dotfiles
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dfsync='dotfiles add -u && dotfiles commit -m "backup: $(date "+%Y-%m-%d %H:%M:%S")" && dotfiles push'
+
+# todo
+alias t='todo.sh'
+
+# nvim
+alias nv='nvim .'
+
+# git
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gd='git diff'
+alias gp='git push'
+alias gf='git fetch'
+alias gm='git merge'
+
+# -- env vars
+
+# fzf
+export FZF_DEFAULT_COMMAND="find . -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
+
+# -- keybinds
+
+# tmux
+bindkey -s '\C-f' 'tmux-sessionizer\r\n'
+
+# -- --
+
+# add user created executables to path
+addToPathFront $HOME/.local/bin
