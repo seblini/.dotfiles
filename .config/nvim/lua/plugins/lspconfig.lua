@@ -104,8 +104,6 @@ return {
 				"stylua",
 				"isort",
 				"black",
-				"prettierd",
-				"prettier",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

@@ -31,7 +31,15 @@ return {
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			html = { "prettierd", "prettier", stop_after_first = true },
+			typescriptreact = { "prettierd" },
 			typescript = { "prettierd", "prettier", stop_after_first = true },
+			jsonc = { "prettierd", "prettier", stop_after_first = true },
+		},
+
+		formatters = {
+			prettierd = {
+				command = "/Users/sebi/.nvm/versions/node/v22.16.0/bin/prettierd",
+			},
 		},
 	},
 }
