@@ -1,5 +1,3 @@
-source ~/.zsh_profile
-
 # -----------------------------------------------------------------------------------
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -47,3 +45,5 @@ export NVM_DIR="$HOME/.nvm"
 source /Applications/SQLAnywhere17/System/bin64/sa_config.sh
 # export SQLANY17=/Applications/SQLAnywhere17
 # export PATH="$SQLANY17/bin64:$PATH"
+
+source ~/.zsh_profile
