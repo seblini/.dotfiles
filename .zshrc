@@ -6,10 +6,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=100
-SAVEHIST=100
-bindkey -v
 # End of lines configured by zsh-newuser-install
 #
 #
@@ -23,4 +19,5 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# Config
 source ~/.zsh_profile
