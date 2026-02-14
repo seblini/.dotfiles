@@ -1,3 +1,4 @@
 tmux new-window -t "$(tmux display-message -p '#S'):2" -c "$(tmux display-message -p '#{pane_current_path}')"
 tmux send-keys -t "$(tmux display-message -p '#S'):2" "nv" C-m
 tmux select-window -t "$(tmux display-message -p '#S'):1"
+tmux send-keys -t "$(tmux display-message -p '#S'):1" "clear" C-m

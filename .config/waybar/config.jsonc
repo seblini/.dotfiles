@@ -4,9 +4,9 @@
     "height": 24,
     "spacing": 5,
 
-    "modules-left": [],
-    "modules-center": ["custom/media", ],
-    "modules-right": ["wireplumber", "clock", "temperature"],
+    "modules-left": ["cpu", "memory", "disk#root", "disk#home", "network", ],
+    "modules-center": [],
+    "modules-right": ["custom/media", "wireplumber", "clock", ],
 
     // "hyprland/workspaces": {
     //     "format": "<span size='larger'>{icon}</span>",
@@ -31,7 +31,7 @@
     },
 
 	"custom/media": {
-        "format": "{}",
+        "format": "{}		",
         "interval": 1,
         "exec": "$HOME/.config/waybar/media.sh"
     },
@@ -49,14 +49,36 @@
     //     "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
     // },
 
+	"cpu": {
+		"interval": 1,
+		"format": "  {usage}%",
+	},
+
     "memory": {
-        "interval": 30,
-        "format": "\uf4bc  {used:0.1f}G"
+        "interval": 10,
+        "format": "{used:0.1f}GiB  "
     },
 
-    "temperature": {
-        "format": "{temperatureF}°F "
-    },
+	"disk#root": {
+		"interval": 1,
+		"format": "/: {used} of {total}  ",
+		"path": "/",
+	},
+
+	"disk#home": {
+		"interval": 1,
+		"format": "/home: {used} of {total}  ",
+		"path": "/home",
+	},
+
+	"network": {
+		"interval": 2,
+		"format": "{ifname}: {bandwidthDownBits} ↓ {bandwidthUpBits} ↑",
+	},
+
+    // "temperature": {
+    //     "format": "{temperatureF}°F "
+    // },
 
     // "network": {
     //     "format": "",
