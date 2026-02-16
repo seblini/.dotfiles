@@ -1,4 +1,4 @@
-# -- functions
+# -- functions --
 
 addToPathFront() {
     if [[ ":$PATH:" != *":$1:"* ]]; then
@@ -6,7 +6,7 @@ addToPathFront() {
     fi
 }
 
-# -- aliases
+# -- aliases --
 
 # misc
 alias ls='ls --color=auto'
@@ -31,17 +31,53 @@ alias gp='git push'
 alias gf='git fetch'
 alias gm='git merge'
 
-# -- env vars
+# -- env vars --
+
+# history
+HISTFILE=~/.histfile
+HISTSIZE=5000
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
 # fzf
 export FZF_DEFAULT_COMMAND="find . -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
 
-# -- keybinds
+# -- keybinds --
+
+# vi
+bindkey -v
+bindkey '^?' backward-delete-char
 
 # tmux
-bindkey -s '\C-f' 'tmux-sessionizer\r\n'
+bindkey -s '^f' 'tmux-sessionizer\r\n'
 
-# -- --
+# history
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
+# completion
+bindkey '^o' autosuggest-accept
+
+# -- plugins --
+
+# Syntax highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Completion
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# Autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# -- -- --
 
 # add user created executables to path
 addToPathFront $HOME/.local/bin
