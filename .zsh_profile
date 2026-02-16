@@ -51,12 +51,12 @@ export FZF_DEFAULT_COMMAND="find . -type f -print -o -type l -print 2> /dev/null
 
 # -- keybinds --
 
-# tmux
-bindkey -s '\C-f' 'tmux-sessionizer\r\n'
-
 # vi
 bindkey -v
 bindkey '^?' backward-delete-char
+
+# tmux
+bindkey -s '^f' 'tmux-sessionizer\r\n'
 
 # history
 bindkey '^p' history-search-backward
