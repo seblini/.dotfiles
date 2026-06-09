@@ -1,7 +1,7 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	event = "VimEnter",
-	branch = "0.1.x",
+	branch = "master",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{
@@ -19,11 +19,15 @@ return {
 		--  - Insert mode: <c-/>
 		--  - Normal mode: ?
 		require("telescope").setup({
-			-- defaults = {
-			--   mappings = {
-			--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-			--   },
-			-- },
+			defaults = {
+				-- mappings = {
+				--   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+				-- },
+				-- preview = {
+				-- 	-- until telescope catches up with tresitter main branch
+				-- 	treesitter = false,
+				-- },
+			},
 			-- pickers = {}
 			extensions = {
 				["ui-select"] = {

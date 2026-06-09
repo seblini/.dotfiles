@@ -15,6 +15,48 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+local function apply_clang_format()
+	local path = vim.fn.findfile(".clang-format", ".;") --[[@as string]]
+	if path == "" then
+		return
+	end
+
+	local f = io.open(path, "r")
+	if not f then
+		return
+	end
+	local content = f:read("*a")
+	f:close()
+
+	local indent = content:match("\n%s*IndentWidth:%s*(%d+)")
+	local tab = content:match("\n%s*TabWidth:%s*(%d+)")
+	local usetab = content:match("\n%s*UseTab:%s*(%w+)")
+
+	if indent then
+		vim.bo.shiftwidth = tonumber(indent)
+	end
+	if tab then
+		vim.bo.tabstop = tonumber(tab)
+	end
+	if usetab then
+		vim.bo.expandtab = (usetab == "Never")
+	end
+
+	vim.bo.cindent = true
+end
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "c", "cpp" },
+	callback = apply_clang_format,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "tex", "c", "cpp", "lua", "python", "rust", "go", "bash", "markdown" },
+	callback = function()
+		vim.treesitter.start()
+	end,
+})
+
 local view_group = vim.api.nvim_create_augroup("auto_view", { clear = true })
 vim.api.nvim_create_autocmd({ "BufWinLeave", "BufWritePost", "WinLeave" }, {
 	desc = "Save view with mkview for real files",
