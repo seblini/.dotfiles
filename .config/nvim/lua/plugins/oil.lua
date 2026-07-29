@@ -6,8 +6,7 @@ return {
 	config = function()
 		require("oil").setup({
 			columns = {
-				-- "permissions",
-				-- "size",
+				"permissions",
 			},
 			view_options = {
 				show_hidden = true,
